@@ -1,8 +1,9 @@
 <h1>Login</h1>
 Username
-<input/>
+<input [(ngModel)]="Username">
 <br/>
 Password
-<input/>
+<input [(ngModel)]="Password">
 <br/>
-<button>Login</button>
+<button (click)="login(Username,Password)">Login</button>
+<button routerLink="/register">Register</button>
