@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Course } from '../models/course';
+import { CourseService } from '../services/CourseService';
 import { UserServiceClient } from '../services/user.service.client';
+
 
 @Component({
   selector: 'app-addcourse',
@@ -8,15 +11,18 @@ import { UserServiceClient } from '../services/user.service.client';
   styleUrls: ['./addcourse.component.css']
 })
 export class AddcourseComponent implements OnInit {
-  Title: any;
+  course: Course = new Course();
 
   constructor(private router: Router, private userService:UserServiceClient) { }
 
   ngOnInit(): void {}
-  add(Title: any) {
-    console.log(Title);
-    const course=this.userService.addCourse(Title)
-      console.log("Successful Added");          
+  saveCourse() {
+    this.userService.saveCourse(this.course).subscribe(
+      data => {
+        console.log('response', data);
+        this.router.navigateByUrl("/course-navigator");
+      }
+    )
   }
-
+  
 }

@@ -13,6 +13,7 @@ import { UserServiceClient } from './services/user.service.client';
 import { CourseService } from './services/CourseService';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
     routing,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [UserServiceClient, CourseService],
   bootstrap: [AppComponent],

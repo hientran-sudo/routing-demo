@@ -1,12 +1,43 @@
-<h1>Student Application</h1>
+<head>
 
-<a routerLink="/login">Login</a>
-<br/>
-<a routerLink="/register">Register</a>
-<br/>
-<a routerLink="/profile">Profile</a>
-<br/>
-<a routerLink="/course-navigator">Course</a>
-<br/>
-<a routerLink="/studenthelp">Help</a>
-<router-outlet></router-outlet>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: gainsboro;
+}
+
+.active {
+  background-color: #065cfb;
+}
+</style>
+</head>
+
+<body>
+    <h1>Student Application</h1>
+    <ul>
+        <li><a  class="active" routerLink="/login">Login</a></li>
+        <li><a routerLink="/register">Register</a></li>
+        <li><a routerLink="/profile">Profile</a></li>
+        <li><a routerLink="/course-navigator">Course</a></li>
+        <li><a routerLink="/studenthelp">Help</a></li>
+        <router-outlet></router-outlet>
+    </ul>
+</body>
