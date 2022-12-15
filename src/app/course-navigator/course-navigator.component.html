@@ -20,7 +20,9 @@
     [ngClass]="{'active': module.id == selectedModule.id}">
     {{module.title}}
     </li> 
-    
+    <br>
+    <br>
+    <li class="list-group-item active">Lessons</li>
     <li *ngFor="let lesson of selectedModule.lessons" class="list-group-item" 
     (click)="selectLesson(lesson)" 
     [ngClass]="{'active': lesson.id == selectedLesson.id}">
