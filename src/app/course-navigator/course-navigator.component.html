@@ -1,40 +1,48 @@
 <body>
-<br>
-<br>
-<br>
-<br>
-<h3>List of Courses</h3>
-<ul class="list-group">
-    <li class="list-group-item active">Courses</li>
-    <li *ngFor="let course of courses" class="list-group-item" 
-        (click)="selectCourse(course)" 
-        [ngClass]="{'active': course.id == selectedCourse.id}">
-        {{course.title}}
-        
-    </li>
     <br>
     <br>
-    <li class="list-group-item active">Modules</li>
-    <li *ngFor="let module of selectedCourse.modules" class="list-group-item" 
-    (click)="selectModule(module)" 
-    [ngClass]="{'active': module.id == selectedModule.id}">
-    {{module.title}}
-    </li> 
     <br>
     <br>
-    <li class="list-group-item active">Lessons</li>
-    <li *ngFor="let lesson of selectedModule.lessons" class="list-group-item" 
-    (click)="selectLesson(lesson)" 
-    [ngClass]="{'active': lesson.id == selectedLesson.id}">
-    {{lesson.title}}
-    </li> 
-   
-</ul> 
+    <h3>List of Courses</h3>
+    <ul class="list-group">
+        <li class="list-group-item active">Courses</li>
+        <li *ngFor="let course of courses" class="list-group-item" (click)="selectCourse(course)"
+            [ngClass]="{'active': course.id == selectedCourse.id}">
+            {{course.title}}
+            
 
-<br>
-<br>
-<button class="btn btn-primary" routerLink="/addcourse">Add course</button>
-<router-outlet></router-outlet>
+        </li>
+        <br>
+        <br>
+        <li class="list-group-item active">Modules</li>
+        <li *ngFor="let module of selectedCourse.modules" class="list-group-item" (click)="selectModule(module)"
+            [ngClass]="{'active': module.id == selectedModule.id}">
+            {{module.title}}
+        </li>
+        <br>
+        <br>
+        <li class="list-group-item active">Lessons</li>
+        <li *ngFor="let lesson of selectedModule.lessons" class="list-group-item" (click)="selectLesson(lesson)"
+            [ngClass]="{'active': lesson.id == selectedLesson.id}">
+            {{lesson.title}}
+        </li>
 
-</body>
+    </ul>
 
+    <br>
+    <br>
+    <button class="btn btn-primary" routerLink="/addcourse">Add course</button>
+    <router-outlet></router-outlet>
+
+    <br>
+    <br>
+    <button class="btn btn-primary" routerLink="/addmodule">Add module</button>
+    <router-outlet></router-outlet>
+
+    <!-- <br>
+<br>
+<button class="btn btn-primary" type="button"(ngSubmit)="addModule(title)">Add module</button>
+<br />
+Enter module name:
+<input [(ngModel)]="title">
+<br /> -->

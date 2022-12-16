@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { StudenthelpComponent } from './studenthelp/studenthelp.component';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
+import { AddmoduleComponent } from './addmodule/addmodule.component';
+
 
 
 const routes: Routes = [
@@ -16,6 +18,9 @@ const routes: Routes = [
   {path: 'studenthelp', component:StudenthelpComponent},
   {path: 'course-navigator', component:CourseNavigatorComponent},
   {path:'addcourse', component:AddcourseComponent},
+  {path:'addmodule', component:AddmoduleComponent},
+  
+
 ];
 
 export const routing = RouterModule.forRoot(routes);

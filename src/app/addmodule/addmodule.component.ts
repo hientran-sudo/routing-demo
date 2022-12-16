@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Module } from '../models/module';
 import { CourseService } from '../services/CourseService';
 
+
 @Component({
-  selector: 'app-course-navigator',
-  templateUrl: './course-navigator.component.html',
-  styleUrls: ['./course-navigator.component.css']
+  selector: 'app-addmodule',
+  templateUrl: './addmodule.component.html',
+  styleUrls: ['./addmodule.component.css']
 })
+export class AddmoduleComponent implements OnInit {
 
-export class CourseNavigatorComponent implements OnInit {
+
   courses : any[] | undefined;
+  module: Module = new Module();
+  
   title:any;
-
   selectedCourse={
     modules:[] as any[],
-    id: undefined,
+    id:undefined
   };
   modules : any[] | undefined;
   selectedModule={
@@ -25,9 +29,6 @@ export class CourseNavigatorComponent implements OnInit {
   selectedLesson={
     id:undefined
   };
-
-
-
 
   constructor(private router: Router,private courseService : CourseService) { }
 
@@ -43,11 +44,6 @@ export class CourseNavigatorComponent implements OnInit {
   selectLesson(lesson:any){
     this.selectedLesson=lesson;
   }
-  // addModule(title:any){
-  //   const newmodule = {title};
-  //   this.courseService.AddModule(this.selectedCourse.id,newmodule);
-
-  // }
   // addModule(){;
   //   this.courseService.addModule(this.module).subscribe(
   //     data => {
@@ -55,9 +51,11 @@ export class CourseNavigatorComponent implements OnInit {
   //       this.router.navigateByUrl("/course-navigator");
   //     }
   //   )
-    
+  // }
+  addModule(title:string){
+    this.courseService.addModule(this.selectedCourse.id,title);
 
   }
-export class Module{
-	title:string | undefined;
 }
+
+

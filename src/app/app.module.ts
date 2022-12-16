@@ -14,6 +14,8 @@ import { CourseService } from './services/CourseService';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddmoduleComponent } from './addmodule/addmodule.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     StudenthelpComponent,
     CourseNavigatorComponent,
-    AddcourseComponent
+    AddcourseComponent,
+    AddmoduleComponent,
   ],
   imports: [
     routing,
