@@ -23,17 +23,29 @@ export class CourseService {
     //   body: JSON.stringify(module)
     // });
     //}
-    async addModule(title: any, id: any){
-        console.log("Add Module with course id : ",id," and Title : ",title)
+    async addModule(id: any, module: any){
+        //console.log("Add Module with course id : ",id," and Title : ",title)
         
-        await fetch(`http://courseservice-env.eba-wmimbkwx.us-east-1.elasticbeanstalk.com/api/v1/courses/${id}/modules/`,{
+        await fetch(`http://courseservice-env.eba-wmimbkwx.us-east-1.elasticbeanstalk.com/api/v1/courses/${id}/modules`,{
           method: 'POST',
               headers: {
                 'Content-Type': 'application/json;charset=utf-8'
               },
-              body: JSON.stringify({"title":title})
+              body: JSON.stringify(module)
         })
         alert("Module Added!");
+      }
+      async addLesson(id: any, lesson: any){
+        //console.log("Add Module with course id : ",id," and Title : ",title)
+        
+        await fetch(`http://courseservice-env.eba-wmimbkwx.us-east-1.elasticbeanstalk.com/api/v1/courses/modules/${id}/lessons`,{
+          method: 'POST',
+              headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+              body: JSON.stringify(lesson)
+        })
+        alert("Lesson Added!");
       }
     // addModule(module: Module): Observable<Module> {
     //     return this._httpClient.post<Module>(this.getUrl, module);

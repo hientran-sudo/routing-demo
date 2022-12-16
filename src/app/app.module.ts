@@ -15,6 +15,7 @@ import { CourseNavigatorComponent } from './course-navigator/course-navigator.co
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddmoduleComponent } from './addmodule/addmodule.component';
+import { AddlessonComponent } from './addlesson/addlesson.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AddmoduleComponent } from './addmodule/addmodule.component';
     CourseNavigatorComponent,
     AddcourseComponent,
     AddmoduleComponent,
+    AddlessonComponent,
   ],
   imports: [
     routing,

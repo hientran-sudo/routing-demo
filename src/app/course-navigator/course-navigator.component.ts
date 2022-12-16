@@ -5,59 +5,46 @@ import { CourseService } from '../services/CourseService';
 @Component({
   selector: 'app-course-navigator',
   templateUrl: './course-navigator.component.html',
-  styleUrls: ['./course-navigator.component.css']
+  styleUrls: ['./course-navigator.component.css'],
 })
-
 export class CourseNavigatorComponent implements OnInit {
-  courses : any[] | undefined;
-  title:any;
+  courses: any[] | undefined;
+  title: any;
+  public static courseid: any;
+  public static moduleid: any;
 
-  selectedCourse={
-    modules:[] as any[],
+  selectedCourse = {
+    modules: [] as any[],
     id: undefined,
   };
-  modules : any[] | undefined;
-  selectedModule={
-    lessons:[] as any[],
-    id:undefined
+  modules: any[] | undefined;
+  selectedModule = {
+    lessons: [] as any[],
+    id: undefined,
   };
 
-  selectedLesson={
-    id:undefined
+  selectedLesson = {
+    id: undefined,
   };
-
-
-
-
-  constructor(private router: Router,private courseService : CourseService) { }
+  constructor(private router: Router, private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this.courseService.findAllCourses().then(courses=>this.courses=courses)
+    this.courseService
+      .findAllCourses()
+      .then((courses) => (this.courses = courses));
   }
-  selectCourse(course:any){
-    this.selectedCourse=course;
+  selectCourse(course: any) {
+    this.selectedCourse = course;
+    CourseNavigatorComponent.courseid = course.id;
   }
-  selectModule(module:any){
-    this.selectedModule=module;
+  selectModule(module: any) {
+    this.selectedModule = module;
+    CourseNavigatorComponent.moduleid = module.id;
   }
-  selectLesson(lesson:any){
-    this.selectedLesson=lesson;
+  selectLesson(lesson: any) {
+    this.selectedLesson = lesson;
   }
-  // addModule(title:any){
-  //   const newmodule = {title};
-  //   this.courseService.AddModule(this.selectedCourse.id,newmodule);
-
-  // }
-  // addModule(){;
-  //   this.courseService.addModule(this.module).subscribe(
-  //     data => {
-  //       console.log('response', data);
-  //       this.router.navigateByUrl("/course-navigator");
-  //     }
-  //   )
-    
-
-  }
-export class Module{
-	title:string | undefined;
+}
+export class Module {
+  title: string | undefined;
 }

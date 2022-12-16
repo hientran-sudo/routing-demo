@@ -9,7 +9,7 @@
         <li *ngFor="let course of courses" class="list-group-item" (click)="selectCourse(course)"
             [ngClass]="{'active': course.id == selectedCourse.id}">
             {{course.title}}
-            
+
 
         </li>
         <br>
@@ -31,18 +31,15 @@
 
     <br>
     <br>
-    <button class="btn btn-primary" routerLink="/addcourse">Add course</button>
+    <button class="btn btn-primary" routerLink="/addcourse">Add Course</button>
     <router-outlet></router-outlet>
 
     <br>
     <br>
-    <button class="btn btn-primary" routerLink="/addmodule">Add module</button>
+    <button class="btn btn-primary" routerLink="/addmodule">Add Module</button>
     <router-outlet></router-outlet>
 
-    <!-- <br>
-<br>
-<button class="btn btn-primary" type="button"(ngSubmit)="addModule(title)">Add module</button>
-<br />
-Enter module name:
-<input [(ngModel)]="title">
-<br /> -->
+    <br>
+    <br>
+    <button class="btn btn-primary" routerLink="/addlesson">Add Lesson</button>
+    <router-outlet></router-outlet>

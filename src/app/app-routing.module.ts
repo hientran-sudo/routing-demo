@@ -8,28 +8,23 @@ import { StudenthelpComponent } from './studenthelp/studenthelp.component';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { AddmoduleComponent } from './addmodule/addmodule.component';
-
-
+import { AddlessonComponent } from './addlesson/addlesson.component';
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
-  {path:'register', component:RegisterComponent},
-  {path:'profile/:userId', component:ProfileComponent},
-  {path: 'studenthelp', component:StudenthelpComponent},
-  {path: 'course-navigator', component:CourseNavigatorComponent},
-  {path:'addcourse', component:AddcourseComponent},
-  {path:'addmodule', component:AddmoduleComponent},
-  
-
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile/:userId', component: ProfileComponent },
+  { path: 'studenthelp', component: StudenthelpComponent },
+  { path: 'course-navigator', component: CourseNavigatorComponent },
+  { path: 'addcourse', component: AddcourseComponent },
+  { path: 'addmodule', component: AddmoduleComponent },
+  { path: 'addlesson', component: AddlessonComponent },
 ];
 
 export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
-
-
+export class AppRoutingModule {}
